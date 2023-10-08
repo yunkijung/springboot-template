@@ -1,6 +1,7 @@
 package com.yun.template.domain.member.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.yun.template.domain.common.auditor.AuditorEntity;
 import com.yun.template.domain.role.entity.Role;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,7 +18,7 @@ import java.util.Set;
 @NoArgsConstructor // 기본생성자가 필요하다.
 @Setter
 @Getter
-public class Member {
+public class Member{
     @Id // 이 필드가 Table의 PK.
     @Column(name="member_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY) // memberId는 자동으로 생성되도록 한다. 1,2,3,4

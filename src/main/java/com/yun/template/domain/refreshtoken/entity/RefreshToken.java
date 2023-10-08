@@ -1,5 +1,6 @@
 package com.yun.template.domain.refreshtoken.entity;
 
+import com.yun.template.domain.common.auditor.AuditorEntity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

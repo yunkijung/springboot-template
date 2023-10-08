@@ -1,5 +1,6 @@
 package com.yun.template.domain.role.entity;
 
+import com.yun.template.domain.common.auditor.AuditorEntity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,7 +15,7 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @Setter
 @Getter
-public class Role {
+public class Role extends AuditorEntity {
     @Id
     @Column(name="role_id")
     private Long roleId;

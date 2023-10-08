@@ -18,12 +18,19 @@ public class MemberAuditorAware implements AuditorAware<Long> {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
+
         if (authentication == null || !authentication.isAuthenticated()) {
             return Optional.empty();
         }
-//        String auth = (String)authentication.getPrincipal();
-//        log.info("auth = {}", auth);
 
-        return Optional.of(((LoginInfoDto)authentication.getPrincipal()).getMemberId());
+
+        Object principal = authentication.getPrincipal();
+
+        if (principal instanceof LoginInfoDto) {
+            return Optional.of(((LoginInfoDto) principal).getMemberId());
+        } else {
+            // Handle the case where principal is not a LoginInfoDto
+            return Optional.empty(); // or throw an exception, depending on your needs
+        }
     }
 }

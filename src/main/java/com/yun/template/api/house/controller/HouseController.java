@@ -1,4 +1,4 @@
-package com.yun.template.api.member.controller;
+package com.yun.template.api.house.controller;
 
 import com.yun.template.domain.house.entity.House;
 import com.yun.template.domain.house.repository.HouseRepository;
